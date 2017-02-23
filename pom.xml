@@ -134,50 +134,50 @@
 			<artifactId>protobuf-java</artifactId>
 			<version>2.5.0</version>
 		</dependency>
-		
-		<dependency>
-                <groupId>org.apache.spark</groupId>
-                <artifactId>spark-streaming-kafka_${scala.tools.version}</artifactId>
-                <version>${spark.version}</version>
-            </dependency>
 
-            <dependency>
-                <groupId>org.apache.phoenix</groupId>
-                <artifactId>phoenix-spark</artifactId>
-                <version>4.7.0-HBase-1.1</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>jetty-util</artifactId>
-                        <groupId>org.mortbay.jetty</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>jetty</artifactId>
-                        <groupId>org.mortbay.jetty</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>servlet-api-2.5</artifactId>
-                        <groupId>org.mortbay.jetty</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>jsp-2.1</artifactId>
-                        <groupId>org.mortbay.jetty</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>jsp-api-2.1</artifactId>
-                        <groupId>org.mortbay.jetty</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>jetty-sslengine</artifactId>
-                        <groupId>org.mortbay.jetty</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            
-              <dependency>
-                <groupId>org.elasticsearch</groupId>
-                <artifactId>elasticsearch-spark_${scala.tools.version}</artifactId>
-                <version>2.1.2</version>
-            </dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming-kafka_${scala.tools.version}</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.phoenix</groupId>
+			<artifactId>phoenix-spark</artifactId>
+			<version>4.7.0-HBase-1.1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jetty-util</artifactId>
+					<groupId>org.mortbay.jetty</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jetty</artifactId>
+					<groupId>org.mortbay.jetty</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>servlet-api-2.5</artifactId>
+					<groupId>org.mortbay.jetty</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jsp-2.1</artifactId>
+					<groupId>org.mortbay.jetty</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jsp-api-2.1</artifactId>
+					<groupId>org.mortbay.jetty</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jetty-sslengine</artifactId>
+					<groupId>org.mortbay.jetty</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch-spark_${scala.tools.version}</artifactId>
+			<version>2.1.2</version>
+		</dependency>
 
 	</dependencies>
 
@@ -189,7 +189,6 @@
 		<sourceDirectory>src/main/scala</sourceDirectory>
 		<pluginManagement>
 			<plugins>
-
 				<plugin>
 					<groupId>net.alchim31.maven</groupId>
 					<artifactId>scala-maven-plugin</artifactId>
@@ -214,7 +213,7 @@
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>2.4</version>
 					<configuration>
-						<finalName>learn-spark</finalName>
+						<finalName>learn-spark</finalName>												
 						<!-- <excludes> <exclude>META-INF/*.SF</exclude> <exclude>META-INF/*.DSA</exclude> 
 							<exclude>META-INF/*.RSA</exclude> <exclude>junit:junit</exclude> <exclude>org.apache.maven:lib:tests</exclude> 
 							</excludes> -->
@@ -230,6 +229,16 @@
 				<groupId>net.alchim31.maven</groupId>
 				<artifactId>scala-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>				
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
